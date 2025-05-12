@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carga de Datos Industriales</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Registro de Intervención</h1>
+        </header>
+        <form id="dataForm">
+            <div class="form-group">
+                <label for="ubicacionTecnica">Ubicación Técnica:</label>
+                <select id="ubicacionTecnica" name="ubicacionTecnica" required>
+                    <option value="">Seleccione una ubicación...</option>
+                    </select>
+            </div>
+
+            <div class="form-group">
+                <label for="fecha">Fecha:</label>
+                <input type="date" id="fecha" name="fecha" required>
+            </div>
+
+            <div class="form-group">
+                <label for="titulo">Título:</label>
+                <input type="text" id="titulo" name="titulo" placeholder="Ej: Revisión Motor Principal" maxlength="50" required>
+            </div>
+
+            <div class="form-group">
+                <label for="descripcion">Descripción:</label>
+                <textarea id="descripcion" name="descripcion" rows="5" placeholder="Describa la intervención o el problema encontrado..." required></textarea>
+            </div>
+
+            <fieldset class="form-group-fieldset">
+                <legend>Recursos</legend>
+                <div class="form-group">
+                    <label for="horas">Horas:</label>
+                    <input type="number" id="horas" name="horas" placeholder="Ej: 8">
+                </div>
+
+                <div class="form-group">
+                    <label for="hh">HH (Horas-Hombre):</label>
+                    <input type="number" id="hh" name="hh" placeholder="Ej: 16">
+                </div>
+
+                <div class="form-group checkbox-group">
+                    <div>
+                        <input type="checkbox" id="requireGrua" name="requireGrua" value="Sí">
+                        <label for="requireGrua" class="checkbox-label">Requiere Grúa</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="requireAndamio" name="requireAndamio" value="Sí">
+                        <label for="requireAndamio" class="checkbox-label">Requiere Andamio</label>
+                    </div>
+                </div>
+            </fieldset>
+
+            <div class="form-group checkbox-group">
+                <label>Estado:</label>
+                <div>
+                    <input type="checkbox" id="realizado" name="realizado" value="Realizado">
+                    <label for="realizado" class="checkbox-label">Realizado</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="cambiar" name="cambiar" value="Cambiar">
+                    <label for="cambiar" class="checkbox-label">Requiere Cambio/Revisión</label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="codigoSap">Código SAP Material/Servicio:</label>
+                <select id="codigoSap" name="codigoSap">
+                    <option value="">Seleccione un código SAP...</option>
+                    </select>
+            </div>
+
+            <div class="form-group">
+                <button type="submit" id="submitButton">Enviar Datos</button>
+            </div>
+        </form>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
